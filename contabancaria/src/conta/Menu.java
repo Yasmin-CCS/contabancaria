@@ -1,22 +1,43 @@
 package conta;
 
 import java.util.Scanner;
+import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
+import conta.util.Cores;
 
 public class Menu {
 	public static void main(String[] args) {
-
+		
+		
+		//testes para conta corrente e cpoupanca
+		ContaCorrente cc1 = new ContaCorrente(3, 1007, 18, "Lucas", 0.0f, 1000.0f);
+		cc1.visualizar();
+		cc1.sacar(12000.0f);
+		cc1.visualizar();
+		cc1.depositar(5000.0f);
+		cc1.visualizar();
+		
+		ContaPoupanca cp1 = new ContaPoupanca(5, 256, 3, "Maria dos Santos", 100000.0f, 8);
+		cp1.visualizar();
+        cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
+		
+		
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
 
 		while (true) {
 
-			System.out.println("*****************************************************");
+			System.out.println(Cores.TEXT_YELLOW_BOLD+"\n\n*****************************************************");
 			System.out.println("                                                     ");
-			System.out.println("                BANCO DO BRAZIL COM Z                ");
+			System.out.println(Cores.TEXT_BLUE_BOLD+"                BANCO DO BRAZIL COM Z                ");
 			System.out.println("                                                     ");
-			System.out.println("*****************************************************");
-			System.out.println("                                                     ");
+			System.out.println(Cores.TEXT_GREEN_BOLD+"*****************************************************");
+			System.out.println(Cores.TEXT_WHITE_BOLD+"                                                     ");
 			System.out.println("            1 - Criar Conta                          ");
 			System.out.println("            2 - Listar todas as Contas               ");
 			System.out.println("            3 - Buscar Conta por Numero              ");
